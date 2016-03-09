@@ -3,17 +3,18 @@ package br.pucminas.icei.audition.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 /**
  * Entidade representando AuditLogs na Base de dados
  * @author Giovanni Silva.
  */
 @Entity
+@SequenceGenerator(name = "audit_seq", sequenceName = "audit_seq", initialValue = 1, allocationSize = 50)
 public class AuditEvent implements Serializable {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "audit_seq")
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private String applicationName;
@@ -22,13 +23,14 @@ public class AuditEvent implements Serializable {
     @Column(nullable = false, length = 200)
     private String action;
     @Column(nullable = false)
+    @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime dateTime;
     @Column(length = 46) // 46 é o tamanho maximo de IPV6
     private String ip;
     @Enumerated(EnumType.STRING)
     private SecurityLevel securityLevel;
 
-    public AuditEvent(UUID id, String applicationName, String userName, String action, LocalDateTime dateTime, String ip, SecurityLevel securityLevel) {
+    public AuditEvent(String applicationName, String userName, String action, LocalDateTime dateTime, String ip, SecurityLevel securityLevel) {
         this.id = id;
         this.applicationName = applicationName;
         this.userName = userName;
@@ -38,7 +40,7 @@ public class AuditEvent implements Serializable {
         this.securityLevel = securityLevel;
     }
 
-    public AuditEvent(UUID id, String applicationName, String userName, String action, LocalDateTime dateTime) {
+    public AuditEvent(String applicationName, String userName, String action, LocalDateTime dateTime) {
         this.id = id;
         this.applicationName = applicationName;
         this.userName = userName;
@@ -49,11 +51,11 @@ public class AuditEvent implements Serializable {
     public AuditEvent() {
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
