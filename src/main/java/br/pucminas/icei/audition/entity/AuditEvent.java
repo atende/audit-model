@@ -22,6 +22,8 @@ public class AuditEvent implements Serializable {
     private String userName;
     @Column(nullable = false, length = 200)
     private String action;
+    @Embedded
+    private Resource resource;
     @Column(nullable = false)
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime dateTime;
@@ -30,21 +32,21 @@ public class AuditEvent implements Serializable {
     @Enumerated(EnumType.STRING)
     private SecurityLevel securityLevel;
 
-    public AuditEvent(String applicationName, String userName, String action, LocalDateTime dateTime, String ip, SecurityLevel securityLevel) {
-        this.id = id;
+    public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime, String ip, SecurityLevel securityLevel) {
         this.applicationName = applicationName;
         this.userName = userName;
         this.action = action;
+        this.resource = resource;
         this.dateTime = dateTime;
         this.ip = ip;
         this.securityLevel = securityLevel;
     }
 
-    public AuditEvent(String applicationName, String userName, String action, LocalDateTime dateTime) {
-        this.id = id;
+    public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime) {
         this.applicationName = applicationName;
         this.userName = userName;
         this.action = action;
+        this.resource = resource;
         this.dateTime = dateTime;
     }
 
@@ -107,4 +109,25 @@ public class AuditEvent implements Serializable {
         this.securityLevel = securityLevel;
     }
 
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
+
+    @Override
+    public String toString() {
+        return "AuditEvent{" +
+                "id=" + id +
+                ", applicationName='" + applicationName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", action='" + action + '\'' +
+                ", resource=" + resource +
+                ", dateTime=" + dateTime +
+                ", ip='" + ip + '\'' +
+                ", securityLevel=" + securityLevel +
+                '}';
+    }
 }
