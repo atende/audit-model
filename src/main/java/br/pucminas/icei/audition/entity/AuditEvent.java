@@ -31,6 +31,8 @@ public class AuditEvent implements Serializable {
     private String ip;
     @Enumerated(EnumType.STRING)
     private SecurityLevel securityLevel;
+    @Column(length = 255)
+    private String description;
 
     public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime, String ip, SecurityLevel securityLevel) {
         this.applicationName = applicationName;
@@ -48,6 +50,17 @@ public class AuditEvent implements Serializable {
         this.action = action;
         this.resource = resource;
         this.dateTime = dateTime;
+    }
+
+    public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime, String ip, SecurityLevel securityLevel, String description) {
+        this.applicationName = applicationName;
+        this.userName = userName;
+        this.action = action;
+        this.resource = resource;
+        this.dateTime = dateTime;
+        this.ip = ip;
+        this.securityLevel = securityLevel;
+        this.description = description;
     }
 
     public AuditEvent() {
@@ -115,6 +128,14 @@ public class AuditEvent implements Serializable {
 
     public void setResource(Resource resource) {
         this.resource = resource;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
