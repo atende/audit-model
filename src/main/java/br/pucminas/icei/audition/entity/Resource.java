@@ -15,7 +15,7 @@ import java.util.Arrays;
  */
 @Embeddable
 public class Resource {
-
+    public static final String RESOURCE_ID_NOT_APPLICABLE = "NOT_APPLICABLE";
     @Column(nullable = false, length = 200)
     private String resourceType;
     @Column(nullable = false, length = 200)
@@ -24,6 +24,10 @@ public class Resource {
     public Resource(String resourceType, String... resourceIds){
         this.resourceType = resourceType;
          setResourceIds(resourceIds);
+    }
+    public Resource(String resourceType){
+        this.resourceType = resourceType;
+        setResourceId(RESOURCE_ID_NOT_APPLICABLE);
     }
 
     public Resource() {
