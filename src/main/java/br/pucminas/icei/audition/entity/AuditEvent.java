@@ -44,6 +44,15 @@ public class AuditEvent implements Serializable {
         this.securityLevel = securityLevel;
     }
 
+    public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime, String ip) {
+        this.applicationName = applicationName;
+        this.userName = userName;
+        this.action = action;
+        this.resource = resource;
+        this.dateTime = dateTime;
+        this.ip = ip;
+    }
+
     public AuditEvent(String applicationName, String userName, String action, Resource resource, LocalDateTime dateTime) {
         this.applicationName = applicationName;
         this.userName = userName;
@@ -149,6 +158,7 @@ public class AuditEvent implements Serializable {
                 ", dateTime=" + dateTime +
                 ", ip='" + ip + '\'' +
                 ", securityLevel=" + securityLevel +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
