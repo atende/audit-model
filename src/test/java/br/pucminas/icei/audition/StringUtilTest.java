@@ -1,11 +1,12 @@
-package br.pucminas.icei.audition.entityModel;
+package br.pucminas.icei.audition;
 
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Giovanni Silva

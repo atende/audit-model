@@ -1,4 +1,4 @@
-package br.pucminas.icei.audition.entityModel;
+package br.pucminas.icei.audition;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,6 @@
 package br.pucminas.icei.audition.entity;
 
-import br.pucminas.icei.audition.entityModel.StringUtil;
+import br.pucminas.icei.audition.StringUtil;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
