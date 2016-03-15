@@ -6,6 +6,8 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 /**
+ * Attribute converter for JPA 2.1 that transform a LocalDateTime into a database Timestamp
+ * Used to persiste Java 8 LocalDateTime in JPA and Hibernate
  * @author Giovanni Silva.
  */
 @Converter

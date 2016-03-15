@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * Entidade representando AuditLogs na Base de dados
+ * This entity represent audit logs in the database, and is the common contract to be transfered in JSON
  * @author Giovanni Silva.
  */
 @Entity

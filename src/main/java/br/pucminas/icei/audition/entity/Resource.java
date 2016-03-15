@@ -1,16 +1,16 @@
 package br.pucminas.icei.audition.entity;
 
 import br.pucminas.icei.audition.entityModel.StringUtil;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Transient;
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * Representa um recurso em AuditEvent.
- * Um recurso é composto de um tipo e um id. Por exemplo: aluno 1234
+ * Represents a resource in the AuditEvent.
+ * A resource has a resourceType and resourceId. Ex: student 1234
  * @author Giovanni Silva
  */
 @Embeddable
@@ -50,8 +50,8 @@ public class Resource {
     }
 
     /**
-     * Adiciona resourceIds como Comma Separated Value (separados por ;)
-     * @param resourceIds IDs a serem adicioandos
+     * Set resourceIds like comman separated value
+     * @param resourceIds IDs to be setted
      */
     @Transient
     public void setResourceIds(String... resourceIds){
@@ -59,9 +59,10 @@ public class Resource {
     }
 
     /**
-     * Retorna os resourceIds como uma lista
-     * @return Lista de IDs, se houver apenas um ID retorna uma Lista com valor 1
+     * Return resourceIds as a list. ResourceId could be in common separeted value
+     * @return List
      */
+    @Transient
     public List<String> getResourceIds(){
         return StringUtil.fromCsv(this.resourceId);
     }

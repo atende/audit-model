@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Utilitario para converter uma lista de string uma string separada por ;
+ * Utility to convert strings separated with ; to lists and vice versa
  * @author Giovanni Silva
  */
 public class StringUtil {
