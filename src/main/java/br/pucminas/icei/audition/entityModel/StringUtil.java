@@ -4,33 +4,36 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Utility to convert strings separated with ; to lists and vice versa
+ * Utility to convert strings separated with ; (csv) to lists and vice versa
+ * This utility is not fully csv compatible. For instance,
+ * it do not parse valid characters and assume a simple split
  * @author Giovanni Silva
  */
 public class StringUtil {
     /**
-     * Converte para csv
-     * @param list Lista a ser convertida. Codigo otimista, as strings da lista <b>NÃO</b> devem conter <b>;<b/>
-     * @return String separada por ;
+     * Convert List of strins to csv
+     * @param list List to be converted. Optimistic code, the strings on the list
+     *             should <b>not</b> contain <b>;<b/>
+     * @return String separated by ;
      */
     public static String toCsv(final List<String> list) {
         return toString(list, ';');
     }
 
     /**
-     * Converte de um CSV para List. Codigo otimista não trata a string.
-     * @param string  A string deve estar separada por ;
-     * @return Lista de String
+     * Convert from CSV to List. Optmistic code.
+     * @param string  The string separated by ;
+     * @return List of strings
      */
     public static List<String> fromCsv(final String string){
         return fromString(string, ';');
     }
 
     /**
-     * Converte uma lista de objetos em uma string separada por um delimitador
-     * @param list Lista a ser convertida
-     * @param delimiter Delimitador a ser adicionado entre as Strings da lista
-     * @return String separada por delimitador
+     * Convert a list of strings to a string separated by delimiter
+     * @param list List
+     * @param delimiter Delimiter
+     * @return String
      */
     public static String toString(final List<String> list, char delimiter) {
         final StringBuilder b = new StringBuilder();
@@ -46,10 +49,10 @@ public class StringUtil {
     }
 
     /**
-     * Convert uma string em uma lista separando-a por um delimitador
-     * @param string String a ser convertida
-     * @param delimiter Delimitador para separar string
-     * @return Lista de pedaços da String
+     * Convert a string to a list os String separated by a delimiter
+     * @param string String
+     * @param delimiter delimiter
+     * @return List os the pieces
      */
     public static List<String> fromString(final String string, char delimiter){
         String[] split = string.split(String.valueOf(delimiter));

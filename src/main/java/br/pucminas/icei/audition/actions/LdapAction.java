@@ -1,6 +1,7 @@
 package br.pucminas.icei.audition.actions;
 
 /**
+ * Common LdapActions to applications
  * @author Giovanni Silva.
  */
 public enum LdapAction {

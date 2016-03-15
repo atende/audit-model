@@ -1,6 +1,7 @@
 package br.pucminas.icei.audition.actions;
 
 /**
+ * Common database actions to applications
  * @author Giovanni Silva.
  */
 public enum DatabaseAction {
