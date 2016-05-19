@@ -10,25 +10,27 @@ import java.time.LocalDateTime;
  */
 @Entity
 @SequenceGenerator(name = "audit_seq", sequenceName = "audit_seq", initialValue = 1, allocationSize = 50)
+@Table(name = "audit_event")
 public class AuditEvent implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "audit_seq")
     private Long id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "application_name", nullable = false, length = 50)
     private String applicationName;
-    @Column(nullable = false, length = 100)
+    @Column(name = "user_name", nullable = false, length = 100)
     private String userName;
     @Column(nullable = false, length = 200)
     private String action;
     @Embedded
     private Resource resource;
-    @Column(nullable = false)
+    @Column(name="date_time",nullable = false)
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime dateTime;
     @Column(length = 46) // 46 é o tamanho maximo de IPV6
     private String ip;
+    @Column(name = "security_level")
     @Enumerated(EnumType.STRING)
     private SecurityLevel securityLevel;
     @Column(length = 255)

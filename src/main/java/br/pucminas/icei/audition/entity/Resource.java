@@ -16,9 +16,9 @@ import java.util.List;
 @Embeddable
 public class Resource {
     public static final String RESOURCE_ID_NOT_APPLICABLE = "NOT_APPLICABLE";
-    @Column(nullable = false, length = 200)
+    @Column(name = "resource_type", nullable = false, length = 200)
     private String resourceType;
-    @Column(nullable = false, length = 200)
+    @Column(name = "resource_id", nullable = false, length = 200)
     private String resourceId;
 
     public Resource(String resourceType, String... resourceIds){
