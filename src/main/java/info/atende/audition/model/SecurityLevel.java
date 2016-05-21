@@ -1,4 +1,4 @@
-package info.atende.audition.model.entity;
+package info.atende.audition.model;
 
 import java.io.Serializable;
 

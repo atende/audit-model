@@ -1,5 +1,6 @@
 package info.atende.audition.model.entity;
 
+import info.atende.audition.model.Resource;
 import org.junit.Test;
 
 import java.util.Arrays;
