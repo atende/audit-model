@@ -2,16 +2,16 @@
 <section class="page-header">
       <h1 class="project-name">Audit Model</h1>
       <h2 class="project-tagline">A model for AuditEvents in project Audition</h2>
-      <a href="https://github.com/crcpuc/audit-model" class="btn btn-primary">View on GitHub</a>
-      <a href="https://github.com/crcpuc/audit-model/zipball/master" class="btn btn-primary">Download .zip</a>
-      <a href="https://github.com/crcpuc/audit-model/tarball/master" class="btn btn-primary">Download .tar.gz</a>
+      <a href="https://github.com/atende/audit-model" class="btn btn-primary">View on GitHub</a>
+      <a href="https://github.com/atende/audit-model/zipball/master" class="btn btn-primary">Download .zip</a>
+      <a href="https://github.com/atende/audit-model/tarball/master" class="btn btn-primary">Download .tar.gz</a>
 </section>
 
 # About
 
 This project represents a model for events transmited, serialized and persisted in the audit project
 
-For more information about the project [Audit Project](http://github.com/crcpuc/audit-docs)
+For more information about the project [Audit Project](http://github.com/atende/audit-docs)
 
 # The AuditEvent Object
 

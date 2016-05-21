@@ -1,4 +1,4 @@
-package br.pucminas.icei.audition.actions;
+package info.atende.audition.actions;
 
 /**
  * Common UserActions to applications

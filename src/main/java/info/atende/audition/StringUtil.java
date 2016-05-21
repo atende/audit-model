@@ -1,4 +1,4 @@
-package br.pucminas.icei.audition;
+package info.atende.audition;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package br.pucminas.icei.audition.entity;
+package info.atende.audition.entity;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

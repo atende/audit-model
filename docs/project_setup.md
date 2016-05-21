@@ -4,16 +4,16 @@ If you use some framework dependency like **audit-appclient-spring** it already 
 
 Gradle
 
-    compile("br.pucminas.icei.audition:audit-model:$auditModelVersion")
+    compile("info.atende.audition:audit-model:$auditModelVersion")
     
 Maven
 
     <dependency>
-      <groupId>br.pucminas.icei.audition</groupId>
+      <groupId>info.atende.audition</groupId>
       <artifactId>audit-model</artifactId>
       <version>${auditModelVersion}</version>
     </dependency>
     
 SBT
 
-    libraryDependencies += "br.pucminas.icei.audition" % "audit-model" % "$auditModelVersion"
+    libraryDependencies += "info.atende.audition" % "audit-model" % "$auditModelVersion"
