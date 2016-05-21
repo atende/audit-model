@@ -1,4 +1,4 @@
-package info.atende.audition;
+package info.atende.audition.model;
 
 import org.junit.Test;
 

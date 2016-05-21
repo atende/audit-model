@@ -1,4 +1,4 @@
-package info.atende.audition.actions;
+package info.atende.audition.model.actions;
 
 /**
  * Common database actions to applications

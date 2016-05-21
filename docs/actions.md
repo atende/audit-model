@@ -21,7 +21,7 @@ Other examples:
 * ldap_read - The ldap object has been readed
 * ldap_change_password - The ldap password of the object has been changed
 
-The Package **info.atende.audition.actions** contains standard actions for every application.
+The Package **info.atende.audition.model.actions** contains standard actions for every application.
 Each standard action in this package is a Java Enum. When using the Enum you should pass the toString() method as
 to the event. The to string method created the prefix format that you see above
 

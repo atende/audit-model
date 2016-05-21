@@ -1,6 +1,6 @@
-package info.atende.audition.entity;
+package info.atende.audition.model.entity;
 
-import info.atende.audition.StringUtil;
+import info.atende.audition.model.StringUtil;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

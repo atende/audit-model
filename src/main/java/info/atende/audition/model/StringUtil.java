@@ -1,4 +1,4 @@
-package info.atende.audition;
+package info.atende.audition.model;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +13,7 @@ public class StringUtil {
     /**
      * Convert List of strins to csv
      * @param list List to be converted. Optimistic code, the strings on the list
-     *             should <b>not</b> contain <b>;<b/>
+     *             should <b>not</b> contain <b>;</b>
      * @return String separated by ;
      */
     public static String toCsv(final List<String> list) {
