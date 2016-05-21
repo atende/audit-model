@@ -1,0 +1,8 @@
+site_name: Audit Model
+theme: readthedocs
+extra_css: [extra.css]
+pages:
+- Home: index.md
+- "Project Setup": project_setup.md
+- Actions: actions.md
+- Resources: resources.md

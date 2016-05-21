@@ -50,7 +50,7 @@ public class Resource {
     }
 
     /**
-     * Set resourceIds like comman separated value
+     * Set resourceIds like comma separated value
      * @param resourceIds IDs to be setted
      */
     @Transient
