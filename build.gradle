@@ -66,6 +66,10 @@ uploadArchives {
     }
 }
 
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.13'
+}
+
 task javadocJar(type: Jar) {
     classifier = 'javadoc'
     from javadoc
