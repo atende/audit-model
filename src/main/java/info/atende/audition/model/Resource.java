@@ -68,6 +68,26 @@ public class Resource {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Resource resource = (Resource) o;
+
+        if (resourceType != null ? !resourceType.equals(resource.resourceType) : resource.resourceType != null)
+            return false;
+        return resourceId != null ? resourceId.equals(resource.resourceId) : resource.resourceId == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = resourceType != null ? resourceType.hashCode() : 0;
+        result = 31 * result + (resourceId != null ? resourceId.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Resource{" +
                 "resourceType='" + resourceType + '\'' +

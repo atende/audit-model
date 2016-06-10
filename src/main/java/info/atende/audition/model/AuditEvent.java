@@ -150,6 +150,38 @@ public class AuditEvent implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        AuditEvent event = (AuditEvent) o;
+
+        if (applicationName != null ? !applicationName.equals(event.applicationName) : event.applicationName != null)
+            return false;
+        if (userName != null ? !userName.equals(event.userName) : event.userName != null) return false;
+        if (action != null ? !action.equals(event.action) : event.action != null) return false;
+        if (resource != null ? !resource.equals(event.resource) : event.resource != null) return false;
+        if (dateTime != null ? !dateTime.equals(event.dateTime) : event.dateTime != null) return false;
+        if (ip != null ? !ip.equals(event.ip) : event.ip != null) return false;
+        if (securityLevel != event.securityLevel) return false;
+        return description != null ? description.equals(event.description) : event.description == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = applicationName != null ? applicationName.hashCode() : 0;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (action != null ? action.hashCode() : 0);
+        result = 31 * result + (resource != null ? resource.hashCode() : 0);
+        result = 31 * result + (dateTime != null ? dateTime.hashCode() : 0);
+        result = 31 * result + (ip != null ? ip.hashCode() : 0);
+        result = 31 * result + (securityLevel != null ? securityLevel.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "AuditEvent{" +
                 "id=" + id +
