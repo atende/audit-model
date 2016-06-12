@@ -3,3 +3,7 @@ build/
 .idea/
 site/
 .gradle/
+_builds/
+_cache/
+_projects/
+_steps/

@@ -6,6 +6,8 @@ group = "info.atende.audition"
 archivesBaseName = "audit-model"
 version = "1.0.0-SNAPSHOT"
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+ext.ossrhUsername = 'build'
+ext.ossrhPassword = 'test'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

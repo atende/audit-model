@@ -1,0 +1,18 @@
+box: atende/build-image
+
+build:
+  steps:
+    - script:
+      name: gradle build
+      code: |
+        export GRADLE_USER_HOME=$WERCKER_CACHE_DIR/gradle
+        ./gradlew --full-stacktrace -q build
+    - script:
+      name: build docs
+      code: |
+        mkdocs build
+deploy:
+  steps:
+    - gh-pages:
+      token: 3e1e5c1c83d54a5d053549c3cee118f4188d8306
+      basedir: site
