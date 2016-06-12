@@ -13,6 +13,7 @@ build:
         mkdocs build
 deploy:
   steps:
-    - gh-pages:
-      token: 3e1e5c1c83d54a5d053549c3cee118f4188d8306
+    - lukevivier/gh-pages:
+      repo: atende/audit-model
+      token: $GIT_TOKEN
       basedir: site
