@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'idea'
 
 group = "info.atende.audition"
 archivesBaseName = "audit-model"
@@ -21,7 +22,11 @@ dependencies {
     testCompile 'junit:junit:4.10'
 }
 
-
+idea {
+	module {
+		excludeDirs += file('.wercker')
+	}
+}
 
 uploadArchives {
     repositories {
